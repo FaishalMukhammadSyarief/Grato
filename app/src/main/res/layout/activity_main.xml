@@ -8,6 +8,10 @@
         <variable
             name="viewModel"
             type="com.zhalz.grato.ui.main.MainViewModel" />
+        
+        <variable
+            name="context"
+            type="android.content.Context" />
 
     </data>
 
@@ -22,6 +26,11 @@
             android:contentDescription="@string/cd_background"
             android:scaleType="centerCrop"
             android:src="@drawable/bg_islamic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             tools:ignore="ImageContrastCheck" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -61,6 +70,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_value"
             app:layout_constraintTop_toTopOf="@+id/tv_value"
+            tools:ignore="ImageContrastCheck" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/fab"
+            android:contentDescription="@string/cd_intent"
+            android:onClick="@{() -> viewModel.navigateToOtherActivity(context)}"
+            android:src="@drawable/ic_right_arrow"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_value"
             tools:ignore="ImageContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
