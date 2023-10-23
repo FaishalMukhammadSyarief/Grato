@@ -6,35 +6,30 @@
     <data>
 
         <variable
-            name="access"
-            type="com.zhalz.grato.MainActivity" />
-
-        <variable
-            name="value"
-            type="String" />
+            name="viewModel"
+            type="com.zhalz.grato.ui.main.MainViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.main.MainActivity">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
             android:contentDescription="@string/cd_background"
+            android:scaleType="centerCrop"
             android:src="@drawable/bg_islamic"
             tools:ignore="ImageContrastCheck" />
 
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_value"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_100sdp"
-            android:backgroundTint="@color/brown"
-            android:elevation="@dimen/_100sdp"
-            android:text="@{value}"
+            android:gravity="center"
+            android:text="@{viewModel.counter.toString()}"
             android:textColor="@color/black"
             android:textSize="@dimen/_50sdp"
 
@@ -47,8 +42,8 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             style="@style/fab"
             android:contentDescription="@string/cd_decrease"
+            android:onClick="@{() -> viewModel.decreaseCounter()}"
             android:src="@drawable/ic_remove"
-            android:onClick="@{() -> access.decreaseCounter()}"
 
             app:layout_constraintBottom_toBottomOf="@+id/tv_value"
             app:layout_constraintEnd_toStartOf="@+id/tv_value"
@@ -59,8 +54,8 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             style="@style/fab"
             android:contentDescription="@string/cd_increase"
+            android:onClick="@{() -> viewModel.increaseCounter()}"
             android:src="@drawable/ic_add"
-            android:onClick="@{() -> access.increaseCounter()}"
 
             app:layout_constraintBottom_toBottomOf="@+id/tv_value"
             app:layout_constraintEnd_toEndOf="parent"

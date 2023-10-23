@@ -1,8 +1,10 @@
-package com.zhalz.grato
+package com.zhalz.grato.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import com.zhalz.grato.R
 import com.zhalz.grato.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,22 +13,10 @@ class MainActivity : AppCompatActivity() {
         DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
 
-    private var counter = 0
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.access = this
-
-        binding.value = counter.toString()
-    }
-
-    fun increaseCounter(){
-        counter += 1
-        binding.value = counter.toString()
-    }
-    fun decreaseCounter(){
-        counter -= 1
-        binding.value = counter.toString()
-
+        binding.viewModel = viewModel
     }
 }
