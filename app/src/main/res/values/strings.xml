@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Grato</string>
+
+    <!--  Content Description  -->
+    <string name="cd_increase">Increase Value</string>
+    <string name="cd_decrease">Decrease Value</string>
+    <string name="cd_background">Background Image</string>
+</resources>

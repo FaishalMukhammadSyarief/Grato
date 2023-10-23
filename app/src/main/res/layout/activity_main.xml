@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="access"
+            type="com.zhalz.grato.MainActivity" />
+
+        <variable
+            name="value"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/cd_background"
+            android:src="@drawable/bg_islamic"
+            tools:ignore="ImageContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_value"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:backgroundTint="@color/brown"
+            android:elevation="@dimen/_100sdp"
+            android:text="@{value}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_50sdp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="VisualLintButtonSize,SpeakableTextPresentCheck" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/fab"
+            android:contentDescription="@string/cd_decrease"
+            android:src="@drawable/ic_remove"
+            android:onClick="@{() -> access.decreaseCounter()}"
+
+            app:layout_constraintBottom_toBottomOf="@+id/tv_value"
+            app:layout_constraintEnd_toStartOf="@+id/tv_value"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_value"
+            tools:ignore="ImageContrastCheck" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/fab"
+            android:contentDescription="@string/cd_increase"
+            android:src="@drawable/ic_add"
+            android:onClick="@{() -> access.increaseCounter()}"
+
+            app:layout_constraintBottom_toBottomOf="@+id/tv_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_value"
+            tools:ignore="ImageContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
