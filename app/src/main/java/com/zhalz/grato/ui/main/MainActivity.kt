@@ -6,7 +6,9 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.zhalz.grato.R
 import com.zhalz.grato.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by lazy {
