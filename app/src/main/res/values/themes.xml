@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Grato" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:statusBarColor">@color/brown</item>
     </style>
 
     <style name="Theme.Grato" parent="Base.Theme.Grato" />
